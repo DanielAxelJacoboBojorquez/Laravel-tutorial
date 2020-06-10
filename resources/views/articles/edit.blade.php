@@ -8,8 +8,9 @@
 <div id="wrapper">
 	<div id="page" class="container">
 		<h2 class="heading has-text-weigth-bold is-size-4">Update Article</h2>
-        <form method="POST" action="/articles">
+        <form method="POST" action="/articles/{{ $article->id }}">
             @csrf
+            @method('PUT')
             <div class="field">
                 <label class="label" for="title">Title</label>
                 <div class="control">
