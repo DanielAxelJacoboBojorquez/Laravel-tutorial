@@ -31,7 +31,7 @@ class ArticlesController extends Controller
 
     public function update(Article $article){
         $article->update($this->validateArticle());
-        return redirect(route('articles.show', $article));
+        return redirect($article->path());
     }
 
     protected function validateArticle(){
