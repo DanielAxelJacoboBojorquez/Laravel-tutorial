@@ -40,4 +40,9 @@ class User extends Authenticatable
     public function articles(){
         return $this->hasManu(Article::class);
     }
+
+    public function routeNotificationForNexmo($notification)
+    {
+        return '';
+    }
 }

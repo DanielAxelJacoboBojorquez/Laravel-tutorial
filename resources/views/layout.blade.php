@@ -23,6 +23,17 @@
 				<li class="{{ Request::path() === 'about' ? 'current_page_item' : '' }}"><a href="/about" accesskey="3" title="">About Us</a></li>
 				<li class="{{ Request::path() === 'articles' ? 'current_page_item' : '' }}" ><a href="/articles" accesskey="4" title="">Articles</a></li>
 				<li class="{{ Request::path() === 'contact' ? 'current_page_item' : '' }}"><a href="/contact" accesskey="5" title="">Contact</a></li>
+                <li>
+                    @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+                        @endauth
+                    </div>
+                    @endif
+                </li>
 			</ul>
 		</div>
 	</div>
