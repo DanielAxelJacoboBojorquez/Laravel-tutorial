@@ -31,7 +31,9 @@ return [
     ],
 
     'nexmo' => [
-    'sms_from' => '5268613431706',
+        'key' => env('NEXMO_KEY', 'bd7fca4a'),
+        'secret' => env('NEXMO_SECRET', 'j9VuMRBI10Etd7L1'),
+        'signature' => env('NEXMO_SECRET', 'uTxoDEcOSRqJqHaVCRFmYtQdRPPk9lFvmnVuK0UC40jMkAqzCO1'),
+        'sms_from' => '526861343170',
     ],
-
 ];

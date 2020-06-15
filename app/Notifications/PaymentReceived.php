@@ -31,7 +31,7 @@ class PaymentReceived extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'database', 'nexmo'];
+    return ['mail', 'database'];
     }
 
     /**
@@ -51,11 +51,11 @@ class PaymentReceived extends Notification
                     ->line('Thanks!');
     }
 
-    public function toNexmo($notifiable)
+    /*public function toNexmo($notifiable)
     {
         return (new NexmoMessage)
                 ->content('Your Laracasts payment has been processed!');
-    }
+    }*/
 
     /**
      * Get the array representation of the notification.
