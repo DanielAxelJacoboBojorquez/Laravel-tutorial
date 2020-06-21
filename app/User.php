@@ -45,4 +45,16 @@ class User extends Authenticatable
     {
         return '';
     }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function assignRole($role){
+        $this->roles()->save($role);
+    }
+
+    public function abilities(){
+        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
+    }
 }
